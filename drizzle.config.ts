@@ -1,4 +1,7 @@
-import { defineConfig } from "drizzle-kit"
+import { defineConfig } from "drizzle-kit";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 export default defineConfig({
   out: "./src/drizzle/migrations",
@@ -13,4 +16,4 @@ export default defineConfig({
     host: process.env.DB_HOST!,
     ssl: false,
   },
-})
+});
