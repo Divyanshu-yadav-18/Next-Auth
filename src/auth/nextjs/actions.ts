@@ -4,7 +4,9 @@ import { z } from "zod"
 import { redirect } from "next/navigation"
 import { signInSchema, signUpSchema } from "./schemas"
 import { generateSalt, hashPassword } from "../core/passwordHasher"
-import { email } from "zod/v4"
+import { UserTable } from "@/drizzle/schema"
+import { db } from "@/drizzle/db"
+import { eq } from "drizzle-orm"
 
 export async function signIn(unsafeData: z.infer<typeof signInSchema>) {
   const { success, data } = signInSchema.safeParse(unsafeData)
@@ -33,7 +35,7 @@ try{
     .values({
       name:data.name,
       email:data.email,
-      hashedPassword,
+      password:hashedPassword,
       salt
     }).returning({id: UserTable.id, role : UserTable.role})
     if(user == null) return "Unable to create an account"
