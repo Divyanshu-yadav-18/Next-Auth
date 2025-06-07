@@ -24,6 +24,6 @@ export type Cookies = {
     get: (key: string)=> {name: string, value: string} | undefined
     delete: (key: string ) => void
 }
-export function createUserSession(user){
+export function createUserSession(user: UserSession, cookies: Cookies){
 
 }

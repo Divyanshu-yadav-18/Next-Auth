@@ -7,6 +7,7 @@ import { generateSalt, hashPassword } from "../core/passwordHasher"
 import { UserTable } from "@/drizzle/schema"
 import { db } from "@/drizzle/db"
 import { eq } from "drizzle-orm"
+import { createUserSession } from "../core/session"
 
 export async function signIn(unsafeData: z.infer<typeof signInSchema>) {
   const { success, data } = signInSchema.safeParse(unsafeData)
@@ -40,7 +41,7 @@ try{
     }).returning({id: UserTable.id, role : UserTable.role})
     if(user == null) return "Unable to create an account"
 
-    // await createUserSession(user)
+    await createUserSession(user)
   }catch{
     return "Unable to create an account"
   }
