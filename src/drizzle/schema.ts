@@ -24,4 +24,3 @@ export const UserTable = pgTable("users", {
     .defaultNow()
     .$onUpdate(() => new Date()),
 })
-

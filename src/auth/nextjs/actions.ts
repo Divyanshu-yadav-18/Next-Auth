@@ -39,6 +39,8 @@ try{
       salt
     }).returning({id: UserTable.id, role : UserTable.role})
     if(user == null) return "Unable to create an account"
+
+    // await createUserSession(user)
   }catch{
     return "Unable to create an account"
   }
