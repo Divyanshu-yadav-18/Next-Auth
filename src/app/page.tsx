@@ -6,7 +6,7 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/comp
 import Link from "next/link"
 
 export default async function HomePage() {
-  const fullUser = await getCurrentUser()
+  const fullUser = await getCurrentUser({withFullUser: true})
 
   return (
     <div className="container mx-auto p-4">
@@ -22,7 +22,7 @@ export default async function HomePage() {
       ) : (
         <Card className="max-w-[500px] mt-4">
           <CardHeader>
-            <CardTitle>User: {fullUser.id}</CardTitle>
+            <CardTitle>User: {fullUser.name}</CardTitle>
             <CardDescription>Role: {fullUser.role}</CardDescription>
           </CardHeader>
           <CardFooter className="flex gap-4">
