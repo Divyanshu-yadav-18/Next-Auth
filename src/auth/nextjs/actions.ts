@@ -7,7 +7,7 @@ import { comparePasswords, generateSalt, hashPassword } from "../core/passwordHa
 import { UserTable } from "@/drizzle/schema"
 import { db } from "@/drizzle/db"
 import { eq } from "drizzle-orm"
-import { createUserSession } from "../core/session"
+import { createUserSession, removeUserFromSession } from "../core/session"
 import { cookies } from "next/headers"
 
 export async function signIn(unsafeData: z.infer<typeof signInSchema>) {
@@ -69,7 +69,7 @@ try{
 }
 
 export async function logOut() {
- 
+  await removeUserFromSession(await cookies())
   redirect("/")
 }
 

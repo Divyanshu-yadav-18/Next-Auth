@@ -45,6 +45,14 @@ export async function createUserSession(user: UserSession, cookies: Pick<Cookies
     setCookie(sessionId, cookies);
 }
 
+export async function removeUserFromSession(cookies: Pick<Cookies, "get" | "delete">){
+    const sessionId = cookies.get(COOKIE_SESSION_KEYS)?.value
+    if(sessionId == null) return null
+
+    await redisClient.del(`session:${sessionId}`)
+    cookies.delete(COOKIE_SESSION_KEYS)
+}
+
 function setCookie(sessionId:string, cookies: Pick<Cookies, "set">){
     cookies.set(COOKIE_SESSION_KEYS, sessionId,{
         secure: true,
