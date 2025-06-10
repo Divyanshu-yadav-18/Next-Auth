@@ -36,6 +36,12 @@ export function getUserFromSession(cookies: Pick<Cookies, "get">){
 
     return getUserSessionId(sessionId)
 }
+
+export function updateUserSessionData(user: UserSession, cookies:Pick<Cookies, "get" >){
+    const sessionId = cookies.get(COOKIE_SESSION_KEYS)?.value
+    if(sessionId == null) return null
+}
+
 export async function createUserSession(user: UserSession, cookies: Pick<Cookies, "set">){
     const sessionId = crypto.randomBytes(512).toString("hex").normalize()
     await redisClient.set(`session:${sessionId}`, sessionSchema.parse(user),{
