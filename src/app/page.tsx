@@ -20,21 +20,8 @@ export default async function HomePage() {
         </div> 
       ) : (
         <Card className="max-w-[500px] mt-4">
-          <CardHeader>
-            <CardTitle>User: {fullUser.name}</CardTitle>
-            <CardDescription>Role: {fullUser.role}</CardDescription>
-          </CardHeader>
-          <CardFooter className="flex gap-4">
-            <Button asChild variant="outline">
-              <Link href="/private">Private Page</Link>
-            </Button>
-            {fullUser.role === "admin" && (
-              <Button asChild variant="outline">
-                <Link href="/admin">Admin Page</Link>
-              </Button>
-            )}
+            
             <LogOutButton />
-          </CardFooter>
         </Card>
       )}
     </div>

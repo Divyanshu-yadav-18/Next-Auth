@@ -1,6 +1,11 @@
 import { userRoles } from "@/drizzle/schema";
 import {z} from "zod";
+import crypto from "crypto";
+import { redisClient } from "@/redis/redis";
 
+//seven days in seconds
+const SESSION_EXPIRATION_SECONDS = 60 * 60 * 24 * 7
+const COOKIE_SESSION_KEYS = "custom-session-auth-id"
 
 
 const sessionSchema = z.object({
@@ -24,6 +29,20 @@ export type Cookies = {
     get: (key: string)=> {name: string, value: string} | undefined
     delete: (key: string ) => void
 }
-export function createUserSession(user: UserSession, cookies: Cookies){
+export async function createUserSession(user: UserSession, cookies: Cookies){
+    const sessionId = crypto.randomBytes(512).toString("hex").normalize()
+    await redisClient.set(`session:${sessionId}`, sessionSchema.parse(user),{
+        ex: SESSION_EXPIRATION_SECONDS,
+    })
 
+    setCookie(sessionId, cookies);
+}
+
+function setCookie(sessionId:string, cookies: Pick<Cookies, "set">){
+    cookies.set(COOKIE_SESSION_KEYS, sessionId,{
+        secure: true,
+        httpOnly: true,
+        sameSite: "lax",
+        expires: Date.now() + SESSION_EXPIRATION_SECONDS * 1000
+    })
 }
