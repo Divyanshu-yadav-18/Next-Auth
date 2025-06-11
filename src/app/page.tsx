@@ -3,39 +3,31 @@ import { LogOutButton } from "@/auth/nextjs/components/LogOutButton"
 import { getCurrentUser } from "@/auth/nextjs/currentuser"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"
+import { auth } from "@clerk/nextjs/server"
 import Link from "next/link"
 
 export default async function HomePage() {
-  const fullUser = await getCurrentUser({withFullUser: true})
+  // const fullUser = await getCurrentUser({withFullUser: true})
+  const {userId} = await auth()
 
   return (
     <div className="container mx-auto p-4">
-      {fullUser == null ? (
+      {userId == null ? (
         <div className="flex gap-4">
           <Button asChild>
-            <Link href="/sign-in">Sign In</Link>
+            <SignInButton />
           </Button>
           <Button asChild>
-            <Link href="/sign-up">Sign Up</Link>
+            <SignUpButton />
           </Button>
         </div> 
       ) : (
         <Card className="max-w-[500px] mt-4">
           <CardHeader>
-            <CardTitle>User: {fullUser.name}</CardTitle>
-            <CardDescription>Role: {fullUser.role}</CardDescription>
+            <UserButton />
           </CardHeader>
-          <CardFooter className="flex gap-4">
-            <Button asChild variant="outline">
-              <Link href="/private">Private Page</Link>
-            </Button>
-            {fullUser.role === "admin" && (
-              <Button asChild variant="outline">
-                <Link href="/admin">Admin Page</Link>
-              </Button>
-            )}
-            <LogOutButton />
-          </CardFooter>
+         
         </Card>
       )}
     </div>

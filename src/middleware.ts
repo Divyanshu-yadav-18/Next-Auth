@@ -1,6 +1,12 @@
-import { clerkMiddleware } from '@clerk/nextjs/server';
+import { auth, clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-export default clerkMiddleware();
+const privateRoutes = createRouteMatcher(["/admin(.*)","/private(.*)"])
+
+export default clerkMiddleware(async (auth, request)=>{
+  if(privateRoutes(request)){
+    await auth.protect()
+  }
+});
 
 export const config = {
   matcher: [

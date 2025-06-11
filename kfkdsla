@@ -1,0 +1,107 @@
+* [33mcommit 985d5d4ce73fd3bb97444de828e056d48bd678fd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mclerk_oauth[m[33m, [m[1;31morigin/clerk_oauth[m[33m)[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Wed Jun 11 22:06:33 2025 +0530
+[31m|[m 
+[31m|[m     setup clerk auth
+[31m|[m 
+* [33mcommit ba981ad55bee2979c66d32a6a2aedf2b9a593402[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Wed Jun 11 21:46:58 2025 +0530
+[31m|[m 
+[31m|[m     update session if
+[31m|[m 
+* [33mcommit f8825d55a095d2d76a942c7e7b4e171593780562[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Wed Jun 11 00:00:50 2025 +0530
+[31m|[m 
+[31m|[m     middleWare
+[31m|[m 
+* [33mcommit 985e32ba9168afc7b0f22730d52c034706bebaed[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Tue Jun 10 23:27:48 2025 +0530
+[31m|[m 
+[31m|[m     current user ts logic
+[31m|[m 
+* [33mcommit 5d8d82c93927cbc530732132415b3bd2ce56e16d[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Tue Jun 10 23:19:50 2025 +0530
+[31m|[m 
+[31m|[m     logout logic
+[31m|[m 
+* [33mcommit 0e3d0a6f4f3a24affb4ff06916f7bb96ee413d9c[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Tue Jun 10 23:08:56 2025 +0530
+[31m|[m 
+[31m|[m     sign in logic
+[31m|[m 
+* [33mcommit 8c6cc99c27bf9874cf32a0a38663341c91018c5d[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Tue Jun 10 22:34:01 2025 +0530
+[31m|[m 
+[31m|[m     session management done
+[31m|[m 
+* [33mcommit cb8e57c744bbea063f7704a2171e92f16df5b725[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Tue Jun 10 22:01:49 2025 +0530
+[31m|[m 
+[31m|[m     setup redis and cookies working
+[31m|[m 
+* [33mcommit 415a6bd0868e672ecddf0ec0922d905f99ec9f64[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Sat Jun 7 23:20:59 2025 +0530
+[31m|[m 
+[31m|[m     error fix
+[31m|[m 
+* [33mcommit 158855457ece922050be84f887bb1e8de851aefd[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Sat Jun 7 23:20:18 2025 +0530
+[31m|[m 
+[31m|[m     error fix ui
+[31m|[m 
+* [33mcommit 250ef4634f78b35f2564a73cca3319c74e8f74fe[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Mon Jun 2 23:58:21 2025 +0530
+[31m|[m 
+[31m|[m     session
+[31m|[m 
+* [33mcommit 8406c801056dbd272f8d757133d2c0b6324015bc[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Mon Jun 2 22:42:27 2025 +0530
+[31m|[m 
+[31m|[m     database containerized
+[31m|[m 
+* [33mcommit 907b2d759e96f64ab5b32c45425ed8ca103845e7[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Sun Jun 1 00:04:32 2025 +0530
+[31m|[m 
+[31m|[m     migration orm
+[31m|[m 
+* [33mcommit a50b9932dd874c42284631ef0624ae17e5fd9c40[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Fri May 30 23:34:04 2025 +0530
+[31m|[m 
+[31m|[m     drizzle
+[31m|[m 
+* [33mcommit f1b15a16da7a6a03f8206ffb39e0bf4729496474[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Thu May 29 23:49:16 2025 +0530
+[31m|[m 
+[31m|[m     password generation
+[31m|[m 
+* [33mcommit a7ed16f687cfe060f9358b2781d8b5ff5736f1b7[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Thu May 29 22:37:58 2025 +0530
+[31m|[m 
+[31m|[m     starter code
+[31m|[m 
+* [33mcommit a3ebb6cd80014835798407aa4365c014217ba3eb[m
+[31m|[m Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+[31m|[m Date:   Tue May 27 21:04:17 2025 +0530
+[31m|[m 
+[31m|[m     first commit
+[31m|[m 
+* [33mcommit c7e8f579b77aed65a3d16cd242c13496246615d0[m
+  Author: Divyanshu-yadav-18 <rishabhyadav14065@gmail.com>
+  Date:   Mon May 26 18:04:28 2025 +0530
+  
+      Initial commit from Create Next App
